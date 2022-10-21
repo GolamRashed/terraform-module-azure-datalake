@@ -20,7 +20,7 @@ jobs:
     steps:
     
       - id: slack
-        uses: voxmedia/github-action-slack-notify-build@v1
+        uses: voxmedia/github-action-slack-notify-build@v2
         with:
           channel: ${{ env.slack_channel }}
           status: STARTED
@@ -66,7 +66,7 @@ jobs:
 
       - id: slack-success
         if: success()
-        uses: voxmedia/github-action-slack-notify-build@v1
+        uses: voxmedia/github-action-slack-notify-build@v2
         with:
           channel: ${{ env.slack_channel }}
           status: SUCCESS
@@ -77,7 +77,7 @@ jobs:
 
       - id: slack-failure
         if: failure()
-        uses: voxmedia/github-action-slack-notify-build@v1
+        uses: voxmedia/github-action-slack-notify-build@v2
         with:
           channel: ${{ env.slack_channel }}
           status: FAILED
